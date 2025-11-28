@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: events_db
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: events
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    image: rabbitmq:4.0-management
+    container_name: events_mq
+    ports:
+      - "5672:5672"      # AMQP
+      - "15672:15672"    # Painel Web
