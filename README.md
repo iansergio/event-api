@@ -1,3 +1,7 @@
+# event-api
+
+<!--
+
 ## 📁 Endpoints
 
 ### Base URL
@@ -77,6 +81,4 @@ Content-Type: application/json
 }
 ```
 
-
-
-
+-->
