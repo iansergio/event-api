@@ -1,12 +1,13 @@
 package com.event_api.domain.event;
 
 import com.event_api.domain.event.vo.Address;
-import com.event_api.domain.event.vo.EventStatus;
+import com.event_api.domain.event.vo.Status;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -28,20 +29,22 @@ public class Event {
     private Address address;
 
     @Enumerated(EnumType.STRING)
-    private EventStatus status;
+    private Status status;
 
-    private LocalDateTime eventDate;
+    private LocalDate eventDate;
 
     private UUID organizerId;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    public Event(String title, String description, Address address, LocalDateTime eventDate, UUID organizerId) {
+    public Event(String title, String description, Address address, LocalDate eventDate, UUID organizerId) {
         this.title = title;
         this.description = description;
         this.address = address;
+        this.status = Status.PLANNED;
         this.eventDate = eventDate;
         this.createdAt = LocalDateTime.now();
+        this.organizerId = organizerId;
     }
 }

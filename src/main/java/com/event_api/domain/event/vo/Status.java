@@ -1,8 +1,8 @@
 package com.event_api.domain.event.vo;
 
-public enum EventStatus {
+public enum Status {
     PLANNED,
-    ONGOING,
+    IN_PROGRESS,
     FINISHED,
-    CANCELLED
+    CANCELLED;
 }
