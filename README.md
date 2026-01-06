@@ -2,7 +2,7 @@
 
 ## 📁 Endpoints
 
-### Base URL
+### URL padrão
 ```
 /events
 ```
